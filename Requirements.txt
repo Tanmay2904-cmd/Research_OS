@@ -1,0 +1,29 @@
+# Multi-Agent Research System Requirements
+
+# Core LLM & Agent Framework
+langchain
+langchain-community
+langchain-openai
+langgraph
+openai
+
+# Web Search Tool
+tavily-python
+
+# Web Scraping Tool
+beautifulsoup4
+requests
+lxml
+
+# LangChain LCEL / Runnables (included in langchain-core)
+langchain-core
+
+# React Agent support (included via langgraph)
+# langgraph already supports ReAct agent patterns
+
+# Environment & Config
+python-dotenv
+
+# Utilities
+httpx
+tiktoken
