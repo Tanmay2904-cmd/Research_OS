@@ -7,6 +7,16 @@ import os
 from dotenv import load_dotenv
 load_dotenv()
 
+# Support Streamlit Cloud secrets
+try:
+    import streamlit as st
+    if "GROQ_API_KEY" in st.secrets:
+        os.environ["GROQ_API_KEY"] = st.secrets["GROQ_API_KEY"]
+    if "TAVILY_API_KEY" in st.secrets:
+        os.environ["TAVILY_API_KEY"] = st.secrets["TAVILY_API_KEY"]
+except Exception:
+    pass
+
 llm = ChatGroq(model="llama-3.3-70b-versatile", temperature=0.1)
 
 # 1st agent - Search

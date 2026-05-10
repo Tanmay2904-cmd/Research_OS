@@ -7,6 +7,14 @@ from dotenv import load_dotenv
 load_dotenv()
 from rich import print
 
+# Support Streamlit Cloud secrets
+try:
+    import streamlit as st
+    if "TAVILY_API_KEY" in st.secrets:
+        os.environ["TAVILY_API_KEY"] = st.secrets["TAVILY_API_KEY"]
+except Exception:
+    pass
+
 tavily = TavilyClient(api_key=os.getenv("TAVILY_API_KEY"))
 
 
